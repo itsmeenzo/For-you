@@ -321,5 +321,45 @@
       </div>
     </div>
     <script src="script.js"></script>
-  </body>
+ <!-- ❤️ Heart-Shaped Play/Pause Button -->
+<style>
+  #play-pause {
+    background-color: transparent;
+    border: none;
+    font-size: 2.5rem;
+    color: #e91e63;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  #play-pause:hover {
+    transform: scale(1.2);
+  }
+</style>
+
+<button id="play-pause">❤️</button>
+
+<audio id="bg-music">
+  <source src="blue.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const button = document.getElementById('play-pause');
+  const music = document.getElementById('bg-music');
+  let isPlaying = false;
+
+  button.addEventListener('click', () => {
+    if (isPlaying) {
+      music.pause();
+      button.textContent = '❤️';
+    } else {
+      music.play();
+      button.textContent = '⏸️';
+    }
+    isPlaying = !isPlaying;
+  });
+</script>
+
+</body>
 </html>
